@@ -30,7 +30,7 @@ body {
 	color: #fff;
 }
 .main {
-	min-height: calc(100vh - 110px);
+	min-height: calc(95vh - 110px);
 	padding: 60px 10px 0;
 	display: flex;
 	flex-direction: column;
@@ -52,6 +52,10 @@ body {
     justify-content: center;
 }
 
+.keys.inactive {
+    display: none;
+}
+
 .key {
     border: 3px solid black;
     border-radius: 5px;
@@ -65,14 +69,7 @@ body {
     background: rgba(0,0,0,0.2);
     text-shadow: 0 0 .5rem black;
     cursor: pointer;
-    /* transition: all .1s linear; */
 }
-
-/* .key:hover {
-    transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
-} */
 
 .playing {
     transform: scale(1.1);
@@ -94,7 +91,13 @@ kbd {
 
 
 
-/* .btn-container {
+.piano-section {
+    display: none;
+}
+.piano-section.active {
+    display: block;
+}
+.btn-container {
 	display: flex;
 	justify-content: space-between;
 	width: 306px;
@@ -175,13 +178,8 @@ kbd {
 	z-index: 3;
 	pointer-events: auto;
 	transform-origin: center top;
-} */
-/* .piano-key.piano-key:active,
-.piano-key.sharp.piano-key:active {
-	transform: scale(0.96);
-	opacity: .75;
-} */
-/* .piano-key.none {
+}
+.piano-key.none {
 	background-color: transparent;
 	border: 0;
 	border-radius: 0;
@@ -254,7 +252,7 @@ kbd {
 .piano-key.activ::after,
 .piano-key.activ::before {
 	color: #00b4a4;
-} */
+}
 
 .fullscreen {
 	position: fixed;
