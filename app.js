@@ -1,6 +1,7 @@
 // DRUM KIT
 
 const drumKeys = document.querySelectorAll('.key')
+const fullScreen = document.querySelector('.fullscreen')
 
 function playDrumKey(e) {
     const key = e.target
@@ -33,3 +34,15 @@ function drumPlay (e) {
     audio.play()
     key.classList.add('playing')
 }
+
+function toggleScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.fullscreenEnabled) {
+            document.exitFullscreen();
+        }
+    }
+};
+
+fullScreen.addEventListener('click', toggleScreen);
