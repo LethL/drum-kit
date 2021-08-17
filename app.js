@@ -3,12 +3,15 @@
 const drumKeys = document.querySelectorAll('.key')
 
 function playDrumKey(e) {
-    let key = e.target
+    const key = e.target
+    const audio = document.getElementById(key.dataset.note);
     if (!(key.classList.contains('key'))) {
         key.parentNode.classList.toggle('playing')
         key.classList.toggle('playing')
     }
     key.classList.toggle('playing')
+    audio.currentTime = 0;
+    audio.play()
 }
 
 function removeTransition (e) {
@@ -16,9 +19,10 @@ function removeTransition (e) {
     this.classList.remove('playing')
 }
 
-drumKeys.forEach(e => {
-    e.addEventListener('click', playDrumKey)
-    e.addEventListener('transitionend', removeTransition)
+drumKeys.forEach(key => {
+    key.addEventListener('click', playDrumKey)
+    key.addEventListener('transitionend', removeTransition)
+    window.addEventListener('keydown', drumPlay)
 })
 
 function drumPlay (e) {
@@ -29,5 +33,3 @@ function drumPlay (e) {
     audio.play()
     key.classList.add('playing')
 }
-
-window.addEventListener('keydown', drumPlay)
