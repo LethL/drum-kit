@@ -23,6 +23,18 @@ body {
 	border-bottom: 1px solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.toggle-kit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity .1s linear;
+}
+.toggle-kit:hover {
+    opacity: .8;
 }
 .header-title {
 	line-height: 60px;
