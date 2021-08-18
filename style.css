@@ -8,13 +8,19 @@ a:focus {
 	outline: 0;
 }
 html {
+    color: #fff;
 	background: #313940;
+    transition: all 0.5s ease-in;
+}
+html.light {
+    background: #fff;
+    color: #000;
 }
 body {
 	min-height: 100vh;
-	background-color: #313940;
+	/* background-color: #313940;
+    background: #313940; */
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
-	background: #313940;
 	overflow-x: hidden;
 }
 .header {
@@ -39,7 +45,6 @@ body {
 .header-title {
 	line-height: 60px;
 	font-weight: 300;
-	color: #fff;
 }
 .main {
 	min-height: calc(95vh - 110px);
@@ -285,6 +290,19 @@ kbd {
 }
 :-webkit-full-screen .fullscreen {
 	background-image: url("assets/svg/fullscreen-exit.svg");
+}
+.mode-toggle {
+    position: fixed;
+	top: 120px;
+	left: 40px;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 0;
+	outline: 0;
+	background-size: contain;
+	transition: 0.3s;
+	cursor: pointer;
 }
 .footer {
 	border-top: 1px solid;

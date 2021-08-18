@@ -8,6 +8,7 @@ const piano = document.querySelector('.piano')
 const pianoКeys = document.querySelectorAll('.piano-key')
 const bts = document.querySelector('.btn-container')
 const notesLetters = document.querySelectorAll('.btn')
+const modeToggleBtn = document.querySelector('.mode-toggle')
 
 // DRUM KIT
 
@@ -45,8 +46,7 @@ function drumPlay (e) {
     }
 }
 
-
-// Piano Kit
+// PIANO KIT
 
 pianoКeys.forEach(key => {
     key.addEventListener('mousedown', playAudio);
@@ -143,10 +143,7 @@ const leave = () => {
 piano.addEventListener('mousedown', enter, false);
 piano.addEventListener('mouseup', leave);
 
-
-
-
-
+// FEATURES
 
 function toggleScreen() {
     if (!document.fullscreenElement) {
@@ -172,3 +169,18 @@ function togglePiano() {
 
 drumBtn.addEventListener('click', toggleDrum)
 pianoBtn.addEventListener('click', togglePiano)
+
+modeToggleBtn.addEventListener('click', () => {
+    console.log('1');
+})
+
+modeToggleBtn.addEventListener('click', (e) => {
+    const html = document.querySelector('html')
+    if(html.classList.contains('light')) {
+        html.classList.remove('light')
+        e.target.innerHTML = 'Dark mode'
+    } else {
+        html.classList.add('light')
+        e.target.innerHTML = 'Light mode'
+    }
+})
